@@ -50,17 +50,17 @@ public class App {
         //parsing
         double order = Double.parseDouble(buff_order);
 
+        double total = order;
+
         if(state.equalsIgnoreCase("wi")){
             //math
             tax = order * .055;
-            double total = tax + order;
-
+            total = tax + order;
             //outputs
-            System.out.printf("The subtotal is $%.2f.\nThe tax is $%.2f.\nThe total is $%.2f",
-                            order,tax,total);
-        }else{
-            //outputs
-            System.out.printf("The total is $%.2f",order);
+            System.out.printf("The subtotal is $%.2f.\nThe tax is $%.2f.\n",
+                            order,tax);
         }
+        //outputs
+        System.out.printf("The total is $%.2f",total);
     }
 }
