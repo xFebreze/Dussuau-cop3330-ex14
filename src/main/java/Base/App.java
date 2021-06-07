@@ -39,8 +39,28 @@ Also allow the user to enter the state’s full name in upper, lower, or mixed c
 public class App {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
+        double tax;
 
         //inputs
         System.out.print("What is the order amount? ");
+        String buff_order = input.nextLine();
+        System.out.print("What is the state? ");
+        String state = input.nextLine();
+
+        //parsing
+        double order = Double.parseDouble(buff_order);
+
+        if(state.equalsIgnoreCase("wi")){
+            //math
+            tax = order * .055;
+            double total = tax + order;
+
+            //outputs
+            System.out.printf("The subtotal is $%.2f.\nThe tax is $%.2f.\nThe total is $%.2f",
+                            order,tax,total);
+        }else{
+            //outputs
+            System.out.printf("The total is $%.2f",order);
+        }
     }
 }
